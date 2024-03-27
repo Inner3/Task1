@@ -1,0 +1,96 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.house {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #c2b280; /* Цвет основания дома */
+    
+}
+
+.roof {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 100px solid #8b4513; /* Цвет крыши */
+    z-index: 1;
+}
+
+.chimney {
+    position: absolute;
+    top: -110px;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 70px;
+    background-color: #131305; /* Цвет дымохода */
+    z-index: 0;
+}
+
+.window {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: #87ceeb; /* Цвет окна */
+    border-radius: 50%;
+}
+
+.window::before,
+.window::after {
+    content: '';
+    position: absolute;
+    background-color: #ffffff; /* Цвет разделения */
+}
+
+.window::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+}
+
+.window::after {
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.door {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 100px;
+    background-color: #8b4513; /* Цвет двери */
+    border-radius: 5px;
+}
+
+.door-handle {
+    position: absolute;
+    top: 60%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #000000; /* Цвет ручки */
+    border-radius: 50%;
+}
